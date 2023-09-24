@@ -3,7 +3,6 @@ from pydub.playback import play
 import librosa
 import numpy as np
 import pandas as pd
-import sounddevice as sd
 
 def import_audio_files(file_path):
     # Read the Excel file
@@ -140,8 +139,7 @@ def mix_audio(audio_files, instructions):
     return final_mix, sr
 
 def play_audio(audio, sr):
-    sd.play(audio, sr)
-    sd.wait()  # Wait for the audio to finish playing
+    play(audio)
 
 def audio_main(track_list):
     # Example usage
