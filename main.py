@@ -29,7 +29,7 @@ with st.sidebar:
 # Main content
 st.header("Select Songs to Play")
 
-song_list = ["Don't_Stop_The_Music.wav", "Disturbia.wav", "Only_Girl.mp3"] # Add your list of song names here
+song_list = ["Don't_Stop_The_Music.wav", "Disturbia.mp3", "Only_Girl.mp3"] # Add your list of song names here
 selected_songs = st.multiselect("Select songs to play", song_list)
 
 if selected_songs:
