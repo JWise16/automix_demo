@@ -3,6 +3,8 @@ from pydub.playback import play
 import librosa
 import numpy as np
 import pandas as pd
+import soundfile as sf
+import streamlit as st
 
 def import_audio_files(file_path):
     # Read the Excel file
@@ -139,8 +141,10 @@ def mix_audio(audio_files, instructions):
     return final_mix, sr
 
 def play_audio(audio, sr):
-    play(audio)
-
+    temp_audio_file = "temp_audio.wav"
+    sf.write(temp_audio_file, audio, sr)
+    st.audio(temp_audio_file, format="audio/wav")
+    
 def audio_main(track_list):
     # Example usage
     audio_files = import_audio_files('songs1.xlsx')
